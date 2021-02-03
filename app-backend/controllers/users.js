@@ -8,12 +8,12 @@ router.get("/home", (req, res) => {
     res.send("Pictures go on the home page")
 })
 
-router.get("/admin", authUser, (req, res, next) => {
+router.get("/admin", (req, res, next) => {
     res.send("Filler text, welcome to the Admin page")
 })
 
 
-router.get("/users",  (req, res, next) => {
+router.get("/users", (req, res, next) => {
     User.find({})
         .then(obj => res.json(obj))
         .then(obj => {

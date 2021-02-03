@@ -1,9 +1,10 @@
 const express = require("express") 
 const app = express()  
-const router = require("./controller/users");
+const router = require("./controllers/users.js");
 
 app.use(express.json()); 
-app.use(express.urlencoded({ entended: true }));  
+app.use(express.urlencoded({ entended: true }));
+app.set('view engine', 'hbs');  
 
 app.set("port", 2000); 
 

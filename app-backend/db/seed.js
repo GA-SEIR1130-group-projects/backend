@@ -1,5 +1,3 @@
-
-
 const User = require("../models/user-models.js")
 
 const seedData = require("./user.json");
