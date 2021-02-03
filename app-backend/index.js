@@ -9,7 +9,7 @@ app.set("port", 2000);
 
 
 // Routers
-app.use("/", router)  
+app.use("/api", router)  
 
 app.get("/", (req, res) => {     
     res.send("Homepage is setup") 
