@@ -12,6 +12,7 @@ router.get("/admin", (req, res, next) => {
     res.send("Filler text, welcome to the Admin page")
 })
 // random comment
+// testing comment
 
 router.get("/users", (req, res, next) => {
     User.find({})
