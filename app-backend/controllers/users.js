@@ -22,5 +22,16 @@ router.get("/users", (req, res, next) => {
         })
         .catch(next)
 })
-// some comment
+
+
+router.post('/users', (req, res) => {
+    User.create(req.body)
+        .then(() => {
+            res.redirect("/users/");
+        })
+        .catch(err => console.log(err));
+})
+
+
+
 module.exports = router
