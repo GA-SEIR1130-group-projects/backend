@@ -11,8 +11,6 @@ router.get("/home", (req, res) => {
 router.get("/admin", (req, res, next) => {
     res.send("Filler text, welcome to the Admin page")
 })
-// random comment
-// testing comment
 
 router.get("/users", (req, res, next) => {
     User.find({})
@@ -22,5 +20,17 @@ router.get("/users", (req, res, next) => {
         })
         .catch(next)
 })
-// some comment
-module.exports = router
+
+router.get("/users/:id", (req, res, next) => {
+    User.findById(req.params.id)
+        .then(obj => res.json(obj))
+        .then(obj => {
+            res.render("user", obj)
+        })
+        .catch(err => {
+            console.log("there has been an error" + err)
+            res.send("bad id")
+        })
+})
+
+module.exports = router 
